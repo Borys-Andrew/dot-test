@@ -1,9 +1,9 @@
+import { cn } from "@/lib/utils";
 import { useBlocksStore } from "@/store";
 import { X } from "@mynaui/icons-react";
 
 import React, { useState } from "react";
 
-import clsx from "clsx";
 import { Rnd } from "react-rnd";
 
 import { Button } from "../ui/button";
@@ -43,7 +43,7 @@ const Block = ({ id, x, y, width, height, zIndex }: BlockProps) => {
       style={{
         zIndex,
       }}
-      className={clsx(
+      className={cn(
         "absolute bg-yellow-400 border-[2px] border-solid overflow-hidden transition-all duration-150 ease-in-out rounded-2xl",
         isActive
           ? "cursor-grabbing border-red-500 opacity-90"

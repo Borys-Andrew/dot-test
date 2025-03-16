@@ -2,16 +2,21 @@ import { Button } from "@/components/ui/button";
 
 import React from "react";
 
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 
 export const NotFoundPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isCandidate = location.pathname === "/candidates";
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-center">
       <h1 className="text-6xl font-bold text-red-600 mb-4">404</h1>
       <p className="text-lg text-gray-600 mb-6">
-        Oops! The page you're looking for doesn't exist.
+        {isCandidate
+          ? "Other candidates."
+          : "Oops! The page you're looking for doesn't exist."}
       </p>
       <Button
         onClick={() => navigate("/")}

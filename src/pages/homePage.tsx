@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Links } from "@/settings";
 
 import React from "react";
 
@@ -45,10 +46,13 @@ export const HomePage = () => {
 
           <div className="mt-6 flex justify-center space-x-4">
             <Button>
-              <Link to="/dashboard">View Transactions</Link>
+              <Link to={Links.transactions.index}>View Transactions</Link>
             </Button>
-            <Button variant="outline">
-              <Link to="/users">View Users</Link>
+            <Button>
+              <Link to={Links.blocks.index}>View Bloks</Link>
+            </Button>
+            <Button>
+              <Link to="/candidates">Other candidates?</Link>
             </Button>
           </div>
         </CardContent>

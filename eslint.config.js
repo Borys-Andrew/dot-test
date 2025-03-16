@@ -1,4 +1,5 @@
 import js from "@eslint/js";
+
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
@@ -28,6 +29,7 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
       quotes: ["error", "double"],
+      "sort-imports": ["error", { ignoreDeclarationSort: true }],
     },
   },
 );

@@ -1,32 +1,35 @@
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import React from "react";
 
+import { useRoutes } from "react-router";
+
+import AppLayout from "./components/layout";
+import { BlocksPage, HomePage, NotFoundPage, TransactionsPage } from "./pages";
+import { Paths } from "./settings";
+
 function App() {
-  return (
-    <div className="flex flex-col items-center gap-3 justify-center min-h-svh">
-      <Button>Click me</Button>
-      <Card className="w-2xs">
-        <CardHeader>
-          <CardTitle>Card Title</CardTitle>
-          <CardDescription>Card Description</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
-          <p>Card Footer</p>
-        </CardFooter>
-      </Card>
-    </div>
-  );
+  const element = useRoutes([
+    {
+      path: Paths.index,
+      element: <AppLayout />,
+      children: [
+        {
+          index: true,
+          element: <HomePage />,
+        },
+        {
+          path: Paths.blocks.index,
+          element: <BlocksPage />,
+        },
+        {
+          path: Paths.transactions.index,
+          element: <TransactionsPage />,
+        },
+      ],
+    },
+    { path: "*", element: <NotFoundPage /> },
+  ]);
+
+  return <>{element}</>;
 }
 
 export default App;

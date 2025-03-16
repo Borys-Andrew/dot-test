@@ -1,54 +1,41 @@
-# React + TypeScript + Vite
+# Test Task - Bitcoin Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React-based single-page application (SPA) that tracks live Bitcoin transactions using WebSocket and offers an interactive workspace for manipulating draggable and resizable blocks.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Task 1: Interactive Workspace
 
-## Expanding the ESLint configuration
+- **Draggable Blocks**: Users can move five numbered blocks on a grid layout.
+- **Resizable Blocks**: Blocks are resizable both horizontally and vertically.
+- **Z-Index Control**: Click a block to bring it to the front layer.
+- **Delete Blocks**: Users can remove any block.
+- **Restore Defaults**: The "Reset" button restores blocks to their initial size and position.
+- **Persistent State**: The layout (positions, sizes, visibility) is saved and persists after page refresh.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Task 2: WebSocket-based Bitcoin Transactions
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+- **Real-Time Transaction Tracking**: Continuously updates the list of Bitcoin transactions via WebSocket.
+- **Start/Stop Controls**: Start and stop receiving live updates, while retaining the current list.
+- **Reset Control**: Clears the transaction list and resets the total sum to zero.
+- **Total Sum**: Displays the total sum of received Bitcoin transactions in real-time.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Tech Stack
 
-```js
-// eslint.config.js
-import reactDom from "eslint-plugin-react-dom";
-import reactX from "eslint-plugin-react-x";
+- **React 18** for the frontend framework.
+- **TypeScript** for static type checking.
+- **Zustand** for state management.
+- **Vite** for bundling and development server.
+- **Tailwind CSS** for utility-first styling.
+- **shadcn/ui** for custom UI components.
+- **React-RND** for resizable and draggable components.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    "react-x": reactX,
-    "react-dom": reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs["recommended-typescript"].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-});
-```
+## Installation
+
+To get started with the project, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   ```

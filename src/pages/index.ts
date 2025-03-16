@@ -1,4 +1,4 @@
 export * from "./homePage";
-export * from "./BlocksPage";
-export * from "./TransactionsPage";
-export * from "./NotFoundPage";
+export * from "./blocksPage";
+export * from "./transactionsPage";
+export * from "./notFoundPage";
